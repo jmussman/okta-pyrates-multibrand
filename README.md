@@ -154,7 +154,8 @@ sign-in widget rendering:
 ## Configuration
 
 This project is configured out of the box to work against the IdP at https://pid.pyrates.live (an Okta OIE tenant).
-Because of the requirement for CORS on the Okta side, the demonstration tenant has been configured to allow http://localhost:3000.
+Because of the requirement for CORS on the Okta side, the demonstration tenant has been configured to allow http://localhost:3000,
+and the application is delivered from the Parcel server at http://localhost:3000.
 
 If you want to run this against your own tenant you can change any of those settings.
 
@@ -168,7 +169,7 @@ Requirements: Node.js 18+.
 1. Use the "Sign On", "Black Dogg", and "Green Dragon" authn links, see they have different branding.
 1. If you want to test a sign-in, the users "calicojack@pyrates.live" and "blackbeard@pyrates.live" have the password "P!rates17".
 
-### Use your own Okta stenant
+### Use your own Okta tenant
 
 1. Create a new single-page application integration in your Auth0 tenant, name it whatever you would like.
 1. Set the callback and logout URIs, the default is http://localhost:3000.
