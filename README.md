@@ -22,6 +22,7 @@ There are two parts to this: you have to do a little setup in the application fo
 and a bit more serious programming in the custom login page in the Okta tenant.
 This example is based on the [Okta-Pyrates-SPA](https://github.com/jmussman/okta-pyrates-spa) application, but stripped down further
 to focus on the the branding aspect.
+The application is a single-page application written in JavaScript, and built and bundled with Parcel for delivery to the browser.
 
 This is one of a series of Okta examples that may be used as a foundation for building
 what you need.
