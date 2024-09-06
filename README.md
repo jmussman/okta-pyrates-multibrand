@@ -42,7 +42,7 @@ must be multiple applications for each brand (this example is a single applicati
 If you look at src/assets/script/main.js two additional menu items have been added under "Sign On":
 "Black Dogg" and "Green Dragon".
 These links will invoke alternate branding for the login page.
-This is accomplished by adding the "target" querystring attribute to the link callback functions on lines 109 and 114 using
+This is accomplished by adding the "target" querystring attribute to the link callback functions on lines 114 and 119 using
 the "extraParams" attribute in the options object:
 
 ```
