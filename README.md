@@ -12,13 +12,14 @@
 This question has come up several times over the last couple of years: how may I rebrand my login page to
 match the calling application, but still keep SSO across all of the applications?
 
-The problem you hit is the session cookie; if you use multiple custom domain names the session cookie is tied to the domain name,
-and SSO will not work across the domains.
+The problem you hit is the session cookie; if are multiple custom domain names the session cookie is tied to the single domain name used for authorization
+and SSO will not work across the other domains because the IdP session cookie does not cross these domains.
 It is easy to point multiple domain names to a single brand, but not so easy to have SSO across multiple applications with different brands.
-In fact it was said you could not so it, so of course I couldn't back down from a challenge!
 
-You have to do a little setup in the application,
-and a bit more serious setup in the custom login page in the Okta tenant.
+The solution is to have muliple applications use the same authorization server URL, but identify themselvs so
+the authorization server can change the branding for each.
+There are two parts to this: you have to do a little setup in the application for it to identify itself,
+and a bit more serious programming in the custom login page in the Okta tenant.
 This example is based on the [Okta-Pyrates-SPA](https://github.com/jmussman/okta-pyrates-spa) application, but stripped down further
 to focus on the the branding aspect.
 
@@ -33,6 +34,10 @@ In this example the extra attribute is labeled "target".
 When the user lands on the login page, the URL for the authorization server is present along with all the querystring values.
 Of course the domain for the authorization server must be the same for all the applications, so it should be generic.
 In this example, the authorization server is at the custom domain https://pid.pyrates.live.
+
+Note: there is an alternative here, use the application clientID which is in each request instead of an extra querystring attribute.
+While it eliminates the extra attribute it is not as clear to follow because the clientId is not as identifiable in the code, and there
+must be multiple applications for each brand (this example is a single application that invokes different brands).
 
 If you look at src/assets/script/main.js two additional menu items have been added under "Sign On":
 "Black Dogg" and "Green Dragon".
