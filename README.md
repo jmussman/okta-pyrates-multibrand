@@ -166,6 +166,8 @@ Requirements: Node.js 18+.
 1. Clone this project to your local computer.
 1. Run *npm install*.
 1. In a terminal window launch the program with *npm run dev*.
+1. Use Command/Ctrl-Click to launch the browser app from the link Parcel displays in the in the terminal window.
+Or just open a browser tab and visit http://localhost:3000.
 1. Use the "Sign On", "Black Dogg", and "Green Dragon" authn links, see they have different branding.
 1. If you want to test a sign-in, the users "calicojack@pyrates.live" and "blackbeard@pyrates.live" have the password "P!rates17".
 
